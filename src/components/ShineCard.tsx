@@ -11,7 +11,10 @@ const ShineCard: FC<ShineCardProps> = ({}) => {
     <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5  py-10 gap-4">
       {projects.map((project) => {
         return (
-          <div className=" rounded-2xl h-full w-full p-4 overflow-hidden bg-white border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
+          <div
+            key={project.title}
+            className=" rounded-2xl h-full w-full p-4 overflow-hidden bg-white border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20"
+          >
             <ShineBorder shineColor={"black"} />
             <div className="flex flex-col gap-4 items-center justify-center">
               <div className="relative size-64 rounded-2xl overflow-hidden">

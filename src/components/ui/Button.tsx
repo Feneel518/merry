@@ -1,15 +1,16 @@
+import { cn } from "@/lib/utils";
 import clsx from "clsx";
-import { FC } from "react";
+import { ButtonHTMLAttributes, FC } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children: React.ReactNode;
 }
-
-const Button: FC<ButtonProps> = ({ className, children }) => {
+const Button: FC<ButtonProps> = ({ className, children, ...props }) => {
   return (
     <button
-      className={clsx(
+      {...props}
+      className={cn(
         className,
         "w-80 h-12 bg-white cursor-pointer rounded-3xl border-2 hover:text-white min-w-80 border-[#0A5CFF] shadow-[inset_0px_-2px_0px_1px_#0A5CFF] group hover:bg-[#0A5CFF] transition duration-300 ease-in-out"
       )}

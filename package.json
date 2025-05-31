@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@hookform/resolvers": "^5.0.1",
     "@mantine/hooks": "^8.0.2",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
     "@tabler/icons-react": "^3.33.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -21,8 +25,11 @@
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.56.4",
     "react-use": "^17.6.0",
     "tailwind-merge": "^3.3.0",
+    "vaul": "^1.1.2",
+    "zod": "^3.25.42",
     "zustand": "^5.0.5"
   },
   "devDependencies": {

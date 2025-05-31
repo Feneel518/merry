@@ -1,17 +1,56 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import Button from "./ui/Button";
 import { ArrowRight } from "lucide-react";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/Dialog";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from "./ui/Drawer";
+import ContactForm from "./ContactForm";
 
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = ({}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
     <div
       id="contact"
       className="bg-[#080A13] relative pb-4 pt-96 h-fit mt-auto"
     >
+      {isDesktop ? (
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+          <DialogContent>
+            <ContactForm setIsOpen={setIsOpen}></ContactForm>
+          </DialogContent>
+        </Dialog>
+      ) : (
+        <Drawer open={isOpen} onOpenChange={setIsOpen}>
+          <DrawerContent>
+            <ContactForm setIsOpen={setIsOpen}></ContactForm>
+          </DrawerContent>
+        </Drawer>
+      )}
       <div
         className={cn(
           "absolute inset-0",
@@ -39,10 +78,16 @@ const Footer: FC<FooterProps> = ({}) => {
             </p>
           </div>
           <div className="flex gap-8 md:flex-row flex-col">
-            <Button className="   flex items-center justify-center">
+            <Button
+              onClick={() => setIsOpen((prev) => !prev)}
+              className="   flex items-center justify-center"
+            >
               Request a demo <ArrowRight></ArrowRight>
             </Button>
-            <Button className="  flex items-center justify-center">
+            <Button
+              className="  flex items-center justify-center"
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
               Call Now <ArrowRight></ArrowRight>
             </Button>
           </div>
