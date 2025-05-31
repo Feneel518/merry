@@ -370,38 +370,24 @@ export const whyUs = [
 export const testimonials = [
   {
     quote:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: "Sarah Chen",
-    designation: "Product Manager at TechFlow",
-    src: "/testi1.avif",
+      "Partnering with Nav and Merry Matrix has been a smart move for us. They helped us refine our social media strategy, set up targeted Google Ads, and provided guidance on improving our website’s usability. The increase in online orders and brand recognition has been clear. They’re responsive, proactive, and genuinely invested in our success.",
+    name: "Lisa M.",
+    designation: "Sales & Marketing Manager at Island Berries Tasmania",
+    src: "/testi2.jpg",
   },
   {
     quote:
-      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: "Michael Rodriguez",
-    designation: "CTO at InnovateSphere",
-    src: "/testi2.avif",
+      "Nav and the team at Merry Matrix gave our digital presence the attention it needed. From streamlining our website to running well-structured campaigns across Instagram and Facebook, they’ve helped us stay relevant in a competitive space. We appreciate their creative ideas, consistent follow-through, and local know-how.",
+    name: "Jackie",
+    designation: "Owner at Puddle Duck Vineyard",
+    src: "/testi1.jpg",
   },
   {
     quote:
-      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-    name: "Emily Watson",
-    designation: "Operations Director at CloudScale",
+      "We worked with Merry Matrix to sharpen our online visibility through SEO and social content. Nav was easy to work with — clear on strategy and realistic with expectations. We've started seeing stronger traffic to our site and better engagement on our posts. For a business like ours, it's been a practical and worthwhile investment.",
+    name: "Mark D.",
+    designation: "Store Manager at Eumarrah Wholefoods",
     src: "/testi3.avif",
-  },
-  {
-    quote:
-      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-    name: "James Kim",
-    designation: "Engineering Lead at DataPro",
-    src: "/testi4.avif",
-  },
-  {
-    quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-    name: "Lisa Thompson",
-    designation: "VP of Technology at FutureNet",
-    src: "/testi5.avif",
   },
 ];
 

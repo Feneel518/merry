@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const WhatWe = [
   {
     id: 0,
-    image: "/ITIndustry.webp",
+    image: "/ITIndustry.png",
     title: "IT Industry",
   },
   {
@@ -23,18 +23,18 @@ const WhatWe = [
   },
   {
     id: 2,
-    image: "/ITIndustry.png",
-    title: "IT Industry",
+    image: "/RetailInd.png",
+    title: "Retail Industry",
   },
   {
     id: 3,
-    image: "/ITIndustry.png",
-    title: "IT Industry",
+    image: "/Finance.png",
+    title: "Finance Industry",
   },
   {
     id: 4,
-    image: "/ITIndustry.png",
-    title: "IT Industry",
+    image: "/LogisticInd.png",
+    title: "Logistic Industry",
   },
 ];
 

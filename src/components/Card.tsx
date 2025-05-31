@@ -33,12 +33,20 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
               ></Image>
             </div>
             <div className="flip-card-back absolute w-full h-full backface-hidden rounded-md overflow-hidden rotate-y-180">
-              <div className="bg-black text-white w-full h-full absolute flex flex-col items-center justify-center ">
+              <div className="absolute inset-0 ">
+                <Image
+                  src={"/back.png"}
+                  alt="backside card image"
+                  fill
+                  className="object-cover"
+                ></Image>
+              </div>
+              <div className=" text-white w-full h-full absolute flex flex-col items-center justify-center ">
                 <Image
                   src={backImage}
                   alt={backText}
-                  width={400}
-                  height={400}
+                  width={800}
+                  height={800}
                   draggable={false}
                   className="object-contain select-none"
                 ></Image>
