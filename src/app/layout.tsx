@@ -21,7 +21,7 @@ export const metadata = {
   description:
     "Boost your online presence with MerryMatrix. We offer custom web design, SEO, UI/UX, and digital marketing tailored for your brand.",
   keywords:
-    "Custom website development, SEO agency, UI/UX design, digital marketing, branding agency, web design India",
+    "Custom website development, SEO agency, UI/UX design, digital marketing, branding agency, web design Australia",
   authors: [{ name: "MerryMatrix", url: "https://merrymatrix.vercel.app" }],
   openGraph: {
     title: "MerryMatrix - Boost Your Digital Presence",
