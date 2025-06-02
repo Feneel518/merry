@@ -94,10 +94,50 @@ const Footer: FC<FooterProps> = ({}) => {
         </div>
       </div>
       <div className="text-white z-[500] flex items-center justify-between md:w-1/3 mx-auto font-syne text-[18px] md:text-[24px] mt-10 max-md:px-4 max-md:grid max-md:grid-cols-2 max-md:text-center max-md:gap-8 max-md:-mt-20 max-md:text-2xl max-md:font-bold cursor-pointer">
-        <h2 className="z-10">About</h2>
-        <h2 className="z-10">Services</h2>
-        <h2 className="z-10">Projects</h2>
-        <h2 className="z-10">Contact</h2>
+        <h2
+          onClick={() => {
+            const element = document.getElementById("about");
+            element?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="z-10"
+        >
+          About
+        </h2>
+        <h2
+          onClick={() => {
+            const element = document.getElementById("services");
+            element?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="z-10"
+        >
+          Services
+        </h2>
+        <h2
+          onClick={() => {
+            const element = document.getElementById("projects");
+            element?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="z-10"
+        >
+          Projects
+        </h2>
+        <h2
+          onClick={() => {
+            const element = document.getElementById("contact");
+            element?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="z-10"
+        >
+          Contact
+        </h2>
       </div>
       <div className="text-white/50 z-[500] flex items-center justify-between md:w-2/3 mx-auto font-syne text-[10px] md:text-[16px] max-md:text-center mt-10 max-md:px-4">
         <h2 className="z-10">Subscribe to our monthly newsletter -{">"}</h2>
