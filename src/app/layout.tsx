@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
 import { Roboto_Mono, Syne } from "next/font/google";
 import "./globals.css";
 import Cursor from "@/components/Cursor";
+import { DefaultSeo } from "next-seo";
+import Head from "next/head";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -16,97 +17,87 @@ const roboto = Roboto_Mono({
 });
 
 export const metadata = {
-  title: {
-    default: "Merry Matrix | Where Creativity Meets Innovation",
-    template: "%s | Merry Matrix",
-  },
+  title: "MerryMatrix - Custom Websites, SEO & Branding Services",
   description:
-    "Merry Matrix builds dynamic, intuitive solutions that simplify and enhance user experiences. Join us in shaping the future of design and technology.",
-  keywords: [
-    "Merry Matrix",
-    "creative agency",
-    "UI/UX design",
-    "web development",
-    "digital transformation",
-    "technology solutions",
-    "product design",
-    "branding",
-    "software development",
-    "creative tech studio",
-  ],
-  authors: [{ name: "Merry Matrix", url: "https://merrymatrix.com" }],
-  creator: "Merry Matrix",
-  publisher: "Merry Matrix",
-  generator: "Next.js",
-  metadataBase: new URL("https://merrymatrix.com"),
-
+    "Boost your online presence with MerryMatrix. We offer custom web design, SEO, UI/UX, and digital marketing tailored for your brand.",
+  keywords:
+    "Custom website development, SEO agency, UI/UX design, digital marketing, branding agency, web design India",
+  authors: [{ name: "MerryMatrix", url: "https://merrymatrix.vercel.app" }],
   openGraph: {
-    title: "Merry Matrix | Where Creativity Meets Innovation",
+    title: "MerryMatrix - Boost Your Digital Presence",
     description:
-      "We build dynamic, intuitive solutions that simplify and enhance user experiences. Join us in shaping the future of design and technology.",
-    url: "https://merrymatrix.com",
-    siteName: "Merry Matrix",
+      "We craft modern websites and marketing strategies to grow your business online.",
+    url: "https://merrymatrix.vercel.app",
+    siteName: "MerryMatrix",
     images: [
       {
-        url: "https://merrymatrix.com/og-image.jpg", // 🔁 Replace with actual image
+        url: "/og-image.png", // Add a custom OG image to /public
         width: 1200,
         height: 630,
-        alt: "Merry Matrix – Where Creativity Meets Innovation",
       },
     ],
     locale: "en_US",
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Merry Matrix | Where Creativity Meets Innovation",
+    title: "MerryMatrix",
     description:
-      "We build dynamic, intuitive solutions that simplify and enhance user experiences. Join us in shaping the future of design and technology.",
-    images: ["https://merrymatrix.com/og-image.jpg"], // 🔁 Replace with actual image
-    creator: "@merrymatrix", // 🔁 Optional: Add your Twitter handle
+      "Custom website development, branding, and digital marketing that actually converts.",
+    images: ["/og-image.png"],
   },
+  metadataBase: new URL("https://merrymatrix.vercel.app"),
+};
 
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
-    other: [
+<DefaultSeo
+  title="MerryMatrix | Creative Web & Brand Studio"
+  description="MerryMatrix builds stunning websites, bold brands, and SEO systems that grow businesses."
+  canonical="https://merrymatrix.vercel.app"
+  openGraph={{
+    type: "website",
+    locale: "en_IN",
+    url: "https://merrymatrix.vercel.app",
+    site_name: "MerryMatrix",
+    images: [
       {
-        rel: "mask-icon",
-        url: "/safari-pinned-tab.svg",
-        color: "#FFFAFA", // Match your brand
+        url: "https://merrymatrix.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MerryMatrix Studio",
       },
     ],
-  },
+  }}
+  twitter={{
+    handle: "@merrymatrix",
+    site: "@merrymatrix",
+    cardType: "summary_large_image",
+  }}
+/>;
 
-  themeColor: [{ media: "(prefers-color-scheme: light)", color: "#FFFAFA" }],
-
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    viewportFit: "cover",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-    },
-  },
-
-  alternates: {
-    canonical: "https://merrymatrix.com",
-    languages: {
-      "en-US": "https://merrymatrix.com",
-    },
-  },
-};
+<Head>
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "MerryMatrix",
+        url: "https://merrymatrix.vercel.app",
+        logo: "https://merrymatrix.vercel.app/logo.png",
+        description:
+          "A design-first web studio building stunning websites, bold brands, and scalable SEO strategies.",
+        sameAs: [
+          "https://www.linkedin.com/company/merrymatrix",
+          "https://www.instagram.com/merrymatrix",
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "IN",
+        },
+      }),
+    }}
+  />
+</Head>;
 
 export default function RootLayout({
   children,

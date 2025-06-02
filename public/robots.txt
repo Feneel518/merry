@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://merrymatrix.vercel.app
+
+# Sitemaps
+Sitemap: https://merrymatrix.vercel.app/sitemap.xml
