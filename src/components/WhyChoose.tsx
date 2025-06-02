@@ -10,11 +10,14 @@ const WhyChoose: FC<WhyChooseProps> = ({}) => {
       <div className="max-w-screen-lg mx-auto  py-20 flex items-center justify-center flex-col gap-20  max-md:px-8  ">
         <div className="flex items-center justify-between w-full max-md:flex-col max-md:items-center gap-8">
           <aside className="flex flex-col gap-4">
-            <div className="text-[14px] text-[#8D95A7]">MM_WHY_US?</div>
+            {/* <div className="text-[14px] text-[#8D95A7]">MM_WHY_US?</div> */}
+            <h4 className="text-[12px]  tracking-[2px] fonr-syne text-[#0a5cff]">
+              MM WHY US?
+            </h4>
             <h1 className="text-[40px]  leading-tight   font-[600] font-syne max-md:text-center ">
               Why Choose Merry Matrix?
             </h1>
-            <p className="text-[18px] text-[#455066] md:w-3/4 mx-auto max-md:text-center">
+            <p className="text-[18px] text-[#455066] md:w-3/4 max-md:mx-auto max-md:text-center">
               At Merry Matrix, we don't just build websites — we build your
               digital success story. Here&apos;s why businesses trust us:
             </p>

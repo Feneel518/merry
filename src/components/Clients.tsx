@@ -1,13 +1,18 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useState } from "react";
 import Button from "./ui/Button";
 import Image from "next/image";
 import { Marquee } from "./ui/Marquee";
+import ContactModal from "./ContactModal";
 
 interface ClientsProps {}
 
 const Clients: FC<ClientsProps> = ({}) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="relative w-full h-full flex flex-col gap-8 px-4 max-md:py-4 border-t pt-20 pb-8 bg-[#a7caff]">
+      <ContactModal isOpen={isOpen} setIsOpen={setIsOpen}></ContactModal>
       <div className="flex flex-col items-center justify-center gap-4 ">
         <h1 className="text-[56px] max-md:text-[48px]  leading-tight   font-[600] font-syne text-center">
           Focused on Trust and Expertise
@@ -18,9 +23,17 @@ const Clients: FC<ClientsProps> = ({}) => {
         </p>
       </div>
       <div className="flex items-center justify-center gap-[12px] flex-col md:flex-row">
-        <Button className=" hover:text-white!">Contact Us</Button>
-        <Button className="border-gray-300! hover:bg-gray-200! text-black! hover:text-black!">
-          Request a
+        <Button
+          onClick={() => setIsOpen((prev) => !prev)}
+          className=" hover:text-white!"
+        >
+          Contact Us
+        </Button>
+        <Button
+          onClick={() => setIsOpen((prev) => !prev)}
+          className="border-gray-300! hover:bg-gray-200! text-black! hover:text-black!"
+        >
+          Request a quote
         </Button>
       </div>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-8">

@@ -44,7 +44,7 @@ const Industries: FC<IndustriesProps> = ({}) => {
 
   useGSAP(() => {
     const cards = cardsRef.current;
-    const totalScrollHeight = window.innerHeight * 3;
+    const totalScrollHeight = window.innerHeight * 2;
     const rotation = [-15, -7.5, 0, 7.5, 15];
     const position = [14, 32, 50, 68, 86];
 
@@ -65,7 +65,7 @@ const Industries: FC<IndustriesProps> = ({}) => {
         scrollTrigger: {
           trigger: container.current,
           start: "top top",
-          end: () => `+=${window.innerHeight}`,
+          end: () => `+=${window.innerHeight} `,
           scrub: 0.5,
           id: `spread-${index}`,
         },

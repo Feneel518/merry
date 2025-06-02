@@ -26,6 +26,7 @@ import {
   DrawerTitle,
 } from "./ui/Drawer";
 import ContactForm from "./ContactForm";
+import ContactModal from "./ContactModal";
 
 interface FooterProps {}
 
@@ -38,19 +39,7 @@ const Footer: FC<FooterProps> = ({}) => {
       id="contact"
       className="bg-[#080A13] relative pb-4 pt-96 h-fit mt-auto"
     >
-      {isDesktop ? (
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogContent>
-            <ContactForm setIsOpen={setIsOpen}></ContactForm>
-          </DialogContent>
-        </Dialog>
-      ) : (
-        <Drawer open={isOpen} onOpenChange={setIsOpen}>
-          <DrawerContent>
-            <ContactForm setIsOpen={setIsOpen}></ContactForm>
-          </DrawerContent>
-        </Drawer>
-      )}
+      <ContactModal isOpen={isOpen} setIsOpen={setIsOpen}></ContactModal>
       <div
         className={cn(
           "absolute inset-0",
@@ -140,7 +129,7 @@ const Footer: FC<FooterProps> = ({}) => {
         </h2>
       </div>
       <div className="text-white/50 z-[500] flex items-center justify-between md:w-2/3 mx-auto font-syne text-[10px] md:text-[16px] max-md:text-center mt-10 max-md:px-4">
-        <h2 className="z-10">Subscribe to our monthly newsletter -{">"}</h2>
+        <h2 className="z-10">Mmade with Love in Tasmania ❤️</h2>
         <h2 className="z-10">©Merry Matrix · Terms & Privacy</h2>
       </div>
     </div>
