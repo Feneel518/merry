@@ -21,10 +21,6 @@ const Hero: FC<HeroProps> = ({}) => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       locomotiveScroll = new LocomotiveScroll({});
     })();
-
-    return () => {
-      locomotiveScroll.destroy();
-    };
   });
   const setCursor = useCursorStore((s) => s.setCursor);
   const { label, type } = useCursorStore();
@@ -102,7 +98,7 @@ const Hero: FC<HeroProps> = ({}) => {
         <div className="absolute inset-0 top-48 left-40 ">
           <img
             ref={smallImageRef1}
-            src="../../testi1.avif"
+            src="../../main3.jpg"
             alt="image"
             className="size-32 object-cover rounded-lg opacity-0 scale-0 -rotate-2"
           />
@@ -110,7 +106,7 @@ const Hero: FC<HeroProps> = ({}) => {
         <div className="absolute bottom-40 right-60  ">
           <img
             ref={smallImageRef2}
-            src="../../testi2.avif"
+            src="../../main2.jpg"
             alt="image"
             className="size-40 object-cover rounded-lg opacity-0 scale-0 rotate-2"
           />
@@ -118,7 +114,7 @@ const Hero: FC<HeroProps> = ({}) => {
         <div className="absolute top-32 right-4  ">
           <img
             ref={smallImageRef3}
-            src="../../testi3.avif"
+            src="../../main1.jpg"
             alt="image"
             className="size-64 object-cover opacity-0 rounded-lg -rotate-45 origin-bottom-right"
           />
@@ -126,7 +122,7 @@ const Hero: FC<HeroProps> = ({}) => {
         <div className="absolute bottom-32 left-12  ">
           <img
             ref={smallImageRef4}
-            src="../../testi4.avif"
+            src="../../main4.jpg"
             alt="image"
             className="size-64 object-cover opacity-0 rounded-lg -rotate-45 origin-top-left"
           />

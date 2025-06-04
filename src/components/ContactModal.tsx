@@ -1,10 +1,12 @@
 "use client";
 
 import { Dispatch, FC, SetStateAction } from "react";
-import { Dialog, DialogContent } from "./ui/Dialog";
+
 import ContactForm from "./ContactForm";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Drawer, DrawerContent } from "./ui/Drawer";
+import { ResponsiveModal, ResponsiveModalContent } from "./ui/Dialog";
+import { ScrollArea } from "./ui/scroll-area";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -17,18 +19,20 @@ const ContactModal: FC<ContactModalProps> = ({ isOpen, setIsOpen }) => {
   if (isDesktop) {
     return (
       <div>
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogContent>
+        <ResponsiveModal open={isOpen} onOpenChange={setIsOpen}>
+          <ResponsiveModalContent>
             <ContactForm setIsOpen={setIsOpen}></ContactForm>
-          </DialogContent>
-        </Dialog>
+          </ResponsiveModalContent>
+        </ResponsiveModal>
       </div>
     );
   } else {
     return (
       <Drawer open={isOpen} onOpenChange={setIsOpen}>
         <DrawerContent>
-          <ContactForm setIsOpen={setIsOpen}></ContactForm>
+          <ScrollArea>
+            <ContactForm setIsOpen={setIsOpen}></ContactForm>
+          </ScrollArea>
         </DrawerContent>
       </Drawer>
     );

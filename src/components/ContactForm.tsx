@@ -10,6 +10,29 @@ interface ContactFormProps {
 
 const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
   const form = useForm();
+
+  const onSubmit = async (data: any) => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.ok) {
+        alert("Email sent!");
+        setIsOpen(false);
+        form.reset();
+      } else {
+        alert("Something went wrong. Try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to send email.");
+    }
+  };
   return (
     <div className="p-8">
       <div className="flex flex-col gap-2">
@@ -23,21 +46,24 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
         </p>
       </div>
       <Form {...form}>
-        <form className="flex flex-col gap-4">
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Your Name</FormLabel>
                   <FormControl>
                     <input
                       type="text"
-                      placeholder="Your Name"
+                      placeholder="Elon Musk"
                       {...field}
                       className={cn(
-                        "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                        "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
 
                         "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                       )}
@@ -53,14 +79,14 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormLabel>Address Line 1</FormLabel>
+                  <FormLabel>I work for a company called</FormLabel>
                   <FormControl>
                     <input
                       type="text"
-                      placeholder="Address Line 1"
+                      placeholder="Space X"
                       {...field}
                       className={cn(
-                        "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                        "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
 
                         "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                       )}
@@ -76,14 +102,14 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormLabel>Address Line 2</FormLabel>
+                  <FormLabel>I am looking for</FormLabel>
                   <FormControl>
                     <input
                       type="text"
-                      placeholder="Address Line 2"
+                      placeholder="Bradning, Web, Seo, Marketing"
                       {...field}
                       className={cn(
-                        "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                        "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
 
                         "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                       )}
@@ -94,77 +120,6 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
             }}
           ></FormField>
           <div className="grid grid-cols-3 gap-4">
-            <FormField
-              control={form.control}
-              name="city"
-              render={({ field }) => {
-                return (
-                  <FormItem>
-                    <FormLabel>City</FormLabel>
-                    <FormControl>
-                      <input
-                        type="text"
-                        placeholder="City"
-                        {...field}
-                        className={cn(
-                          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-
-                          "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
-                        )}
-                      />
-                    </FormControl>
-                  </FormItem>
-                );
-              }}
-            ></FormField>
-            <FormField
-              control={form.control}
-              name="state"
-              render={({ field }) => {
-                return (
-                  <FormItem>
-                    <FormLabel>State</FormLabel>
-                    <FormControl>
-                      <input
-                        type="text"
-                        placeholder="State"
-                        {...field}
-                        className={cn(
-                          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-
-                          "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
-                        )}
-                      />
-                    </FormControl>
-                  </FormItem>
-                );
-              }}
-            ></FormField>
-            <FormField
-              control={form.control}
-              name="country"
-              render={({ field }) => {
-                return (
-                  <FormItem>
-                    <FormLabel>Country</FormLabel>
-                    <FormControl>
-                      <input
-                        type="text"
-                        placeholder="Country"
-                        {...field}
-                        className={cn(
-                          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-
-                          "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
-                        )}
-                      />
-                    </FormControl>
-                  </FormItem>
-                );
-              }}
-            ></FormField>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
             <FormField
               control={form.control}
               name="phoneNumber"
@@ -178,7 +133,7 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
                         placeholder="Phone number"
                         {...field}
                         className={cn(
-                          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                          "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
 
                           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                         )}
@@ -201,7 +156,30 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
                         placeholder="Email ID"
                         {...field}
                         className={cn(
-                          "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                          "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
+
+                          "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+                        )}
+                      />
+                    </FormControl>
+                  </FormItem>
+                );
+              }}
+            ></FormField>
+            <FormField
+              control={form.control}
+              name="country"
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel>Country</FormLabel>
+                    <FormControl>
+                      <input
+                        type="text"
+                        placeholder="Country"
+                        {...field}
+                        className={cn(
+                          "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
 
                           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                         )}
@@ -212,6 +190,7 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
               }}
             ></FormField>
           </div>
+
           <FormField
             control={form.control}
             name="message"
@@ -221,11 +200,11 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
                   <FormLabel>Message</FormLabel>
                   <FormControl>
                     <textarea
-                      rows={6}
+                      rows={4}
                       placeholder="Message"
                       {...field}
                       className={cn(
-                        "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex  w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                        "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
 
                         "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                       )}

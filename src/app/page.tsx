@@ -22,7 +22,7 @@ export default function Home() {
       <Integrations></Integrations>
       <Industries></Industries>
       <Scroll></Scroll>
-      <Inspiration></Inspiration>
+      {/* <Inspiration></Inspiration> */}
       <Footer></Footer>
     </div>
   );
