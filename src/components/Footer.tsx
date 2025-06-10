@@ -1,32 +1,13 @@
 "use client";
 
+import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { FC, useState } from "react";
-import Button from "./ui/Button";
-import { ArrowRight } from "lucide-react";
-import { useMediaQuery } from "@/hooks/use-media-query";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./ui/Dialog";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-} from "./ui/Drawer";
-import ContactForm from "./ContactForm";
 import ContactModal from "./ContactModal";
+import Button from "./ui/Button";
+import {} from "./ui/Dialog";
 
 interface FooterProps {}
 
