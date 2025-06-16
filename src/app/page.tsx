@@ -1,4 +1,5 @@
 import Clients from "@/components/Clients";
+import Contact from "@/components/Contact";
 import Expertise from "@/components/Expertise";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -22,6 +23,7 @@ export default function Home() {
       <Integrations></Integrations>
       <Industries></Industries>
       <Scroll></Scroll>
+      <Contact></Contact>
       {/* <Inspiration></Inspiration> */}
       <Footer></Footer>
     </div>
