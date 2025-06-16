@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { cn } from "@/lib/utils";
 import Button from "./ui/Button";
+import { toast } from "sonner";
 
 interface ContactFormProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -22,15 +23,15 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
       });
 
       if (res.ok) {
-        alert("Email sent!");
+        toast.success("Thanks for reaching out! We’ll be in touch shortly.");
         setIsOpen(false);
         form.reset();
       } else {
-        alert("Something went wrong. Try again.");
+        toast.error("Something went wrong. Please try again.");
       }
     } catch (err) {
       console.error(err);
-      alert("Failed to send email.");
+      toast.error("Something went wrong. Please try again.");
     }
   };
   return (

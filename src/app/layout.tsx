@@ -3,6 +3,7 @@ import "./globals.css";
 import Cursor from "@/components/Cursor";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
+import { Toaster } from "@/components/ui/sonner";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -110,6 +111,7 @@ export default function RootLayout({
         className={`${syne.variable} ${roboto.variable} antialiased max-w-screen overflow-x-hidden bg-[#FFFAFA]`}
       >
         {children}
+        <Toaster />
         <Cursor></Cursor>
       </body>
     </html>
