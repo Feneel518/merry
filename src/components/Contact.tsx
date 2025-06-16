@@ -11,20 +11,21 @@ const Contact: FC<ContactProps> = ({}) => {
           <div className="">
             <h3 className="font-bold">Call Us</h3>
             <a href="tel:+61470638795">
-              Office:{" "}
-              <span className="hover:text-[#2f4062]">+61 470638795</span>
+              <span className="text-[#2f4062]">+61 470638795</span>
             </a>
           </div>
           <div className="">
             <h3 className="font-bold">Open Hours</h3>
-            <p className="text-nowrap">
-              Open hours: 9am to 5am Monday to Friday - by appointments only{" "}
+            <p className="text-nowrap text-[#2f4062]">
+              9am to 5am Monday to Friday - by appointments only{" "}
             </p>
           </div>
-          {/* <div className="">
+          <div className="">
             <h3 className="font-bold">Adderess</h3>
-            <p>Location: Level 4, 24 Davey Street, Hobart 7000 </p>
-          </div> */}
+            <p className="text-[#2f4062]">
+              Level 4, 24 Davey Street, Hobart 7000{" "}
+            </p>
+          </div>
         </div>
         <div className="h-[500px]  max-md:mt-10">
           <div className="relative w-full h-full">
