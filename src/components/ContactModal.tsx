@@ -29,8 +29,8 @@ const ContactModal: FC<ContactModalProps> = ({ isOpen, setIsOpen }) => {
   } else {
     return (
       <Drawer open={isOpen} onOpenChange={setIsOpen}>
-        <DrawerContent>
-          <ScrollArea>
+        <DrawerContent className="">
+          <ScrollArea className="overflow-y-scroll">
             <ContactForm setIsOpen={setIsOpen}></ContactForm>
           </ScrollArea>
         </DrawerContent>
