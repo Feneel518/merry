@@ -7,21 +7,24 @@ const Contact: FC<ContactProps> = ({}) => {
     <div className=" mb-80 bg-[#f5f7fa] max-md:px-8 px-8 ">
       <div className="py-20 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="text-5xl font-syne font-bold mt-8">Merry Matrix</div>
-        <div className="flex flex-col gap-4 font-mono text-xl mt-8">
+        <div className="flex flex-col gap-4 font-syne text-xl mt-8">
           <div className="">
             <h3 className="font-bold">Call Us</h3>
-            <p>Office: +61 470 638 795 </p>
+            <a href="tel:+61470638795">
+              Office:{" "}
+              <span className="hover:text-[#2f4062]">+61 470638795</span>
+            </a>
           </div>
           <div className="">
             <h3 className="font-bold">Open Hours</h3>
-            <p>
-              Open hours: 9am to 5m Monday to Friday - by appointments only{" "}
+            <p className="text-nowrap">
+              Open hours: 9am to 5am Monday to Friday - by appointments only{" "}
             </p>
           </div>
-          <div className="">
+          {/* <div className="">
             <h3 className="font-bold">Adderess</h3>
             <p>Location: Level 4, 24 Davey Street, Hobart 7000 </p>
-          </div>
+          </div> */}
         </div>
         <div className="h-[500px]  max-md:mt-10">
           <div className="relative w-full h-full">
