@@ -11,9 +11,9 @@ const WhyChoose: FC<WhyChooseProps> = ({}) => {
         <div className="flex items-center justify-between w-full max-md:flex-col max-md:items-center gap-8">
           <aside className="flex flex-col gap-4">
             {/* <div className="text-[14px] text-[#8D95A7]">MM_WHY_US?</div> */}
-            <h4 className="text-[12px]  tracking-[2px] fonr-syne text-[#0a5cff]">
+            {/* <h4 className="text-[12px]  tracking-[2px] fonr-syne text-[#0a5cff]">
               MM WHY US?
-            </h4>
+            </h4> */}
             <h1 className="text-[40px]  leading-tight   font-[600] font-syne max-md:text-center ">
               Why Choose Merry Matrix?
             </h1>
@@ -22,9 +22,9 @@ const WhyChoose: FC<WhyChooseProps> = ({}) => {
               digital success story. Here&apos;s why businesses trust us:
             </p>
           </aside>
-          <aside className="">
+          {/* <aside className="">
             <Button className=" max-md:w-80!">Find out more</Button>
-          </aside>
+          </aside> */}
         </div>
         <div className="">
           <div className="grid grid-cols-3 gap-8 max-md:grid-cols-1">

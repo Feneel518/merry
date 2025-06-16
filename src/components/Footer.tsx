@@ -110,7 +110,7 @@ const Footer: FC<FooterProps> = ({}) => {
         </h2>
       </div>
       <div className="text-white/50 z-[500] flex items-center justify-between md:w-2/3 mx-auto font-syne text-[10px] md:text-[16px] max-md:text-center mt-10 max-md:px-4">
-        <h2 className="z-10">Mmade with Love in Tasmania ❤️</h2>
+        <h2 className="z-10">Made with Love in Tasmania ❤️</h2>
         <h2 className="z-10">©Merry Matrix · Terms & Privacy</h2>
       </div>
     </div>

@@ -122,11 +122,11 @@ const Industries: FC<IndustriesProps> = ({}) => {
     <div id="projects" className="py-20  h-fit pointer-events-none">
       <section ref={container} className="relative w-screen h-screen ">
         <div className="flex flex-col items-center justify-center gap-4  ">
-          <div className="">
+          {/* <div className="">
             <h4 className="text-[12px]  tracking-[2px] fonr-syne text-[#0a5cff]">
               MERRY MATRIX USE CASES
             </h4>
-          </div>
+          </div> */}
           <h2 className="text-[40px] max-md:text-[20px]  leading-tight   font-[600] font-syne text-center lg:w-[40%]">
             Industries we work for
           </h2>
