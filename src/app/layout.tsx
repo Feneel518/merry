@@ -111,7 +111,7 @@ export default function RootLayout({
         className={`${syne.variable} ${roboto.variable} antialiased max-w-screen overflow-x-hidden bg-[#FFFAFA]`}
       >
         {children}
-        <Toaster />
+        <Toaster richColors />
         <Cursor></Cursor>
       </body>
     </html>

@@ -7,7 +7,7 @@ interface ExpertiseProps {}
 
 const Expertise: FC<ExpertiseProps> = ({}) => {
   return (
-    <div className="bg-[#f5f7fa]    ">
+    <section id="services" className="bg-[#f5f7fa]    ">
       <div className="max-w-screen-lg mx-auto  py-20 flex items-center justify-center flex-col gap-20  max-md:px-8  ">
         <div className="flex items-center justify-between w-full max-md:flex-col max-md:items-center gap-8">
           <aside className="flex flex-col gap-4">
@@ -48,7 +48,7 @@ const Expertise: FC<ExpertiseProps> = ({}) => {
           ></Image>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

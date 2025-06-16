@@ -131,7 +131,7 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
                     <FormControl>
                       <input
                         type="text"
-                        placeholder="Phone number"
+                        placeholder="+61 412 345 678 "
                         {...field}
                         className={cn(
                           "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
@@ -154,7 +154,7 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
                     <FormControl>
                       <input
                         type="text"
-                        placeholder="Email ID"
+                        placeholder="elonmusk@tesla.com"
                         {...field}
                         className={cn(
                           "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
@@ -177,7 +177,7 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
                     <FormControl>
                       <input
                         type="text"
-                        placeholder="Country"
+                        placeholder="Everywhere"
                         {...field}
                         className={cn(
                           "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",
@@ -202,7 +202,7 @@ const ContactForm: FC<ContactFormProps> = ({ setIsOpen }) => {
                   <FormControl>
                     <textarea
                       rows={4}
-                      placeholder="Message"
+                      placeholder="Hi, we need your help!"
                       {...field}
                       className={cn(
                         "file:text-foreground  selection:bg-primary selection:text-primary-foreground dark:bg-input/30 placeholder:uppercase placeholder:font-bold placeholder:text-black/20 border-b flex h-fit text-xl py-2 w-full min-w-0 rounded-md  bg-transparent px-3  placeholder:text-xl shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ",

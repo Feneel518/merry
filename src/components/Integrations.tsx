@@ -5,7 +5,7 @@ interface IntegrationsProps {}
 
 const Integrations: FC<IntegrationsProps> = ({}) => {
   return (
-    <section id="services" className="relative">
+    <section id="" className="relative">
       <div className="flex flex-col items-center justify-center gap-4 py-8 pt-20 px-8 ">
         <div className="">
           <h4 className="text-[12px]  tracking-[2px] fonr-syne text-[#0a5cff]">
