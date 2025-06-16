@@ -31,7 +31,7 @@ const Footer: FC<FooterProps> = ({}) => {
       />
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_bottom,transparent_20%,black)] dark:bg-black"></div>
 
-      <div className="absolute w-[80%] aspect-[4/5] md:aspect-[1202/403] rounded-2xl overflow-hidden left-1/2 -translate-x-1/2 -top-60    ">
+      <div className="absolute w-[80%] aspect-[4/5] md:aspect-[1202/403] rounded-2xl overflow-hidden left-1/2 -translate-x-1/2 -top-60 sm:-top-20  md::-top-60 lg:-top-60  ">
         <Image
           src={"/bg.png"}
           alt="background image"
@@ -40,22 +40,22 @@ const Footer: FC<FooterProps> = ({}) => {
         ></Image>
         <div className="absolute inset-0 flex items-center justify-center flex-col gap-8 max-md:px-4">
           <div className="flex flex-col gap-2">
-            <h2 className="text-white text-[32px] font-[500] font-syne text-center">
+            <h2 className="text-white text-[24px] max-sm:leading-[30px] sm:text-[32px] font-[500] font-syne text-center">
               Empower Your Business with Merry Matrix
             </h2>
             <p className="text-[#e1e6f0] text-[18px] font-[400] font-syne text-center">
               Join hundreds of companies building their digital future with us.
             </p>
           </div>
-          <div className="flex gap-8 md:flex-row flex-col">
+          <div className="flex gap-8 md:flex-row flex-col items-center">
             <Button
               onClick={() => setIsOpen((prev) => !prev)}
-              className="   flex items-center justify-center"
+              className="   flex items-center justify-center max-lg:w-60!"
             >
               Request a demo <ArrowRight></ArrowRight>
             </Button>
             <Button
-              className="  flex items-center justify-center"
+              className="  flex items-center justify-center max-lg:w-60!"
               onClick={() => setIsOpen((prev) => !prev)}
             >
               Call Now <ArrowRight></ArrowRight>

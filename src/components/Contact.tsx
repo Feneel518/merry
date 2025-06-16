@@ -16,7 +16,7 @@ const Contact: FC<ContactProps> = ({}) => {
           </div>
           <div className="">
             <h3 className="font-bold">Open Hours</h3>
-            <p className="text-nowrap text-[#2f4062]">
+            <p className="md:text-nowrap text-[#2f4062]">
               9am to 5am Monday to Friday - by appointments only{" "}
             </p>
           </div>
