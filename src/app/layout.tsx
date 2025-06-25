@@ -98,6 +98,16 @@ export const metadata = {
       }),
     }}
   />
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-V1S6FMF0Z2"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    {/* @ts-ignore */}
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date()); gtag('config', 'G-V1S6FMF0Z2');
+  </script>
 </Head>;
 
 export default function RootLayout({
